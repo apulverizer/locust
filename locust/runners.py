@@ -619,10 +619,10 @@ class MasterRunner(DistributedRunner):
                     logger.info("Worker %s failed to send heartbeat, setting state to missing." % str(client.id))
                     client.state = STATE_MISSING
                     client.user_count = 0
-                    if self.worker_count <= 0:
-                        logger.info("The last worker went missing, stopping test.")
-                        self.stop()
-                        self.check_stopped()
+                    # if self.worker_count <= 0:
+                    #     logger.info("The last worker went missing, stopping test.")
+                    #     self.stop()
+                    #     self.check_stopped()
                 else:
                     client.heartbeat -= 1
 
